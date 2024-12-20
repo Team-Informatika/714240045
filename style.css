@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Background hitam */
+    color: #fff; /* Teks putih */
+}
+
+.card {
+    background: #222; /* Warna abu-abu gelap */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 300px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff; /* Teks putih */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar terisi secara proporsional */
+    aspect-ratio: 1 / 1; /* Menjaga gambar berbentuk lingkaran */
+    margin-top: 20px; /* Memberi sedikit jarak jika diperlukan */
+}
+
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h1 {
+    font-size: 1.5rem;
+    color: #fff; /* Teks putih */
+    margin: 0;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #ccc; /* Teks abu-abu terang */
+    margin: 10px 0;
+}
+
+.skills {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills ul li {
+    background: #333; /* Warna abu-abu gelap */
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.skills h2{
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%); /* Efek hitam putih pada ikon */
+}
