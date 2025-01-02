@@ -124,4 +124,19 @@ body {
     transform: scale(1.2);
     color: #6e5494;
   }
+  .qr-code {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #000000;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .qr-code img {
+    max-width: 150px;
+    height: auto;
+  }
   
