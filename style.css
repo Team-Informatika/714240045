@@ -69,15 +69,59 @@ body {
     text-align: center;
 }
 
+/* Gaya untuk elemen social-icons */
 .social-icons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.social-icons a img {
-    width: 30px;
-    height: 30px;
-    filter: grayscale(100%); /* Efek hitam putih pada ikon */
-}
+    justify-content: center; /* Mengatur ikon di tengah */
+    align-items: center;
+    gap: 20px; /* Jarak antar ikon */
+    padding: 10px;
+    background-color: #f0f0f0; /* Warna latar belakang */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  }
+  
+  /* Gaya untuk teks judul */
+  #so h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  /* Gaya untuk ikon Instagram */
+  #instagram {
+    color: #E1306C; /* Warna khas Instagram */
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  #instagram:hover {
+    transform: scale(1.2); /* Membesar saat di-hover */
+    color: #C13584;
+  }
+  
+  /* Gaya untuk ikon WhatsApp */
+  #whatsapp {
+    color: #25D366; /* Warna khas WhatsApp */
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  #whatsapp:hover {
+    transform: scale(1.2);
+    color: #128C7E;
+  }
+  
+  /* Gaya untuk ikon GitHub */
+  #github {
+    color: #333; /* Warna khas GitHub */
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  #github:hover {
+    transform: scale(1.2);
+    color: #6e5494;
+  }
+  
