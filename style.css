@@ -5,28 +5,27 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #000; /* Background hitam */
-    color: #fff; /* Teks putih */
-}
+    background-color: #000;
+    color: #fff; 
 
 .card {
-    background: #222; /* Warna abu-abu gelap */
+    background: #222; 
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     width: 90%;
     max-width: 300px;
     overflow: hidden;
     text-align: center;
-    color: #fff; /* Teks putih */
+    color: #fff;
 }
 
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 50%; /* Membuat gambar menjadi bulat */
-    object-fit: cover; /* Memastikan gambar terisi secara proporsional */
-    aspect-ratio: 1 / 1; /* Menjaga gambar berbentuk lingkaran */
-    margin-top: 20px; /* Memberi sedikit jarak jika diperlukan */
+    border-radius: 50%; 
+    object-fit: cover; 
+    aspect-ratio: 1 / 1; 
+    margin-top: 20px; 
 }
 
 
@@ -36,13 +35,13 @@ body {
 
 .card-content h1 {
     font-size: 1.5rem;
-    color: #fff; /* Teks putih */
+    color: #fff; 
     margin: 0;
 }
 
 .card-content p {
     font-size: 1rem;
-    color: #ccc; /* Teks abu-abu terang */
+    color: #ccc; 
     margin: 10px 0;
 }
 
@@ -57,7 +56,7 @@ body {
 }
 
 .skills ul li {
-    background: #333; /* Warna abu-abu gelap */
+    background: #333;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
@@ -69,19 +68,17 @@ body {
     text-align: center;
 }
 
-/* Gaya untuk elemen social-icons */
 .social-icons {
     display: flex;
-    justify-content: center; /* Mengatur ikon di tengah */
+    justify-content: center; 
     align-items: center;
-    gap: 20px; /* Jarak antar ikon */
+    gap: 20px; 
     padding: 10px;
-    background-color: #f0f0f0; /* Warna latar belakang */
+    background-color: #f0f0f0;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
   
-  /* Gaya untuk teks judul */
   #so h3 {
     font-family: Arial, sans-serif;
     font-size: 20px;
@@ -89,21 +86,19 @@ body {
     margin-right: 10px;
   }
   
-  /* Gaya untuk ikon Instagram */
   #instagram {
-    color: #E1306C; /* Warna khas Instagram */
+    color: #E1306C; 
     font-size: 24px;
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
   #instagram:hover {
-    transform: scale(1.2); /* Membesar saat di-hover */
+    transform: scale(1.2);
     color: #C13584;
   }
   
-  /* Gaya untuk ikon WhatsApp */
   #whatsapp {
-    color: #25D366; /* Warna khas WhatsApp */
+    color: #25D366; 
     font-size: 24px;
     transition: transform 0.3s ease, color 0.3s ease;
   }
@@ -113,9 +108,8 @@ body {
     color: #128C7E;
   }
   
-  /* Gaya untuk ikon GitHub */
   #github {
-    color: #333; /* Warna khas GitHub */
+    color: #333; 
     font-size: 24px;
     transition: transform 0.3s ease, color 0.3s ease;
   }
