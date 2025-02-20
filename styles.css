@@ -1,136 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #000;
-    color: #fff; 
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+}
 
 .card {
-    background: #222; 
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-    width: 90%;
-    max-width: 300px;
-    overflow: hidden;
-    text-align: center;
-    color: #fff;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 300px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5%; 
-    object-fit: cover; 
-    aspect-ratio: 1 / 1; 
-    margin-top: 20px; 
-}
-
-
-.card-content {
-    padding: 20px;
-}
-
-.card-content h1 {
-    font-size: 1.5rem;
-    color: #fff; 
-    margin: 0;
-}
-
-.card-content p {
-    font-size: 1rem;
-    color: #ccc; 
-    margin: 10px 0;
-}
-
-.skills {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.skills ul li {
-    background: #333;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-.skills h2{
-    text-align: center;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 20px; 
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  }
-  
-  #so h3 {
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    color: #333;
-    margin-right: 10px;
-  }
-  
-  #instagram {
-    color: #E1306C; 
-    font-size: 24px;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  #instagram:hover {
-    transform: scale(1.2);
-    color: #C13584;
-  }
-  
-  #whatsapp {
-    color: #25D366; 
-    font-size: 24px;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  #whatsapp:hover {
-    transform: scale(1.2);
-    color: #128C7E;
-  }
-  
-  #github {
-    color: #333; 
-    font-size: 24px;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  #github:hover {
-    transform: scale(1.2);
-    color: #6e5494;
-  }
-  .qr-code {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #000000;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .qr-code img {
-    max-width: 150px;
-    height: auto;
-  }
-  
+  width: 100%;
+  height: auto;
+ 
