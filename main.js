@@ -10,7 +10,6 @@ getJSON("https://t.if.co.id/json/pohan.json", null, null, responseFunction);
 function responseFunction(response) {
     console.log("✅ Data JSON diterima:", response);
 
-    // Periksa apakah response memiliki struktur yang benar
     if (!response || !response.data || !response.data.card) {
         console.error("❌ Data JSON tidak valid!", response);
         return;
@@ -25,34 +24,40 @@ function responseFunction(response) {
         return;
     }
 
-    // Perbarui elemen HTML berdasarkan JSON
-    document.getElementById("profile-img").innerHTML = `<img src="${avatar.src}" alt="${avatar.alt}" class="profile-picture">`;
-    document.getElementById("profile-name").textContent = details.name || "Nama Tidak Ditemukan";
-    document.getElementById("company-name").textContent = details.occupation || "Pekerjaan Tidak Ditemukan";
-    document.getElementById("job-title").textContent = details.about || "Deskripsi Tidak Ditemukan";
+    // Cek apakah elemen ada sebelum mengubahnya
+    const setText = (id, value, defaultText = "Tidak tersedia") => {
+        const element = document.getElementById(id);
+        if (element) element.textContent = value || defaultText;
+    };
 
-    document.getElementById("email").innerHTML = `<a href="${details.social_links[0].url}" target="_blank">${details.social_links[0].url.replace("mailto:", "")}</a>`;
-    document.getElementById("phone").innerHTML = `<a href="${details.social_links[1].url}" target="_blank">${details.social_links[1].url.replace("https://wa.me/", "")}</a>`;
-    document.getElementById("address").textContent = details.social_links[2].url || "Alamat Tidak Tersedia";
-    document.getElementById("rate").textContent = details.pricing.amount || "Tarif Tidak Diketahui";
+    const setHTML = (id, value) => {
+        const element = document.getElementById(id);
+        if (element) element.innerHTML = value;
+    };
 
-    // Tambah skills jika ada
-    if (details.skills && details.skills.list.length > 0) {
-        document.getElementById("skill-title").textContent = details.skills.description;
-        document.getElementById("skills-list").innerHTML = details.skills.list
-            .map(skill => `<div class="skill-item">${skill}</div>`)
-            .join("");
-    }
+    // Render avatar
+    setHTML("profile-img", `<img src="${avatar.src}" alt="${avatar.alt}" class="profile-picture">`);
+
+    // Render teks
+    setText("profile-name", details.name);
+    setText("company-name", details.occupation);
+    setText("job-title", details.about[0]?.value);
+    setText("email", `📧 Email: <a href="${details.social_links[0]?.url}">${details.social_links[0]?.url.replace("mailto:", "")}</a>`);
+    setText("phone", `📞 Telepon: <a href="${details.social_links[1]?.url}">${details.social_links[1]?.url.replace("https://wa.me/", "")}</a>`);
+    setText("address", `📍 Alamat: ${details.social_links[2]?.url}`);
+    setText("rate", `💰 Tarif: ${details.rate_day.price}`);
+
+    // Tambah skills
+    setText("skill-title", details.skills.description);
+    setHTML("skills-list", details.skills.list.map(skill => `<div class="skill-item">${skill}</div>`).join(""));
 
     // Tambah social media
-    document.getElementById("instagram").innerHTML = `<a href="${details.social_links[0].url}" target="_blank">📷 Instagram</a>`;
-    document.getElementById("whatsapp").innerHTML = `<a href="${details.social_links[1].url}" target="_blank">💬 WhatsApp</a>`;
-    document.getElementById("github").innerHTML = `<a href="${details.social_links[2].url}" target="_blank">🐱 GitHub</a>`;
+    setHTML("instagram", `<a href="${details.social_links[0]?.url}" target="_blank">📷 Instagram</a>`);
+    setHTML("whatsapp", `<a href="${details.social_links[1]?.url}" target="_blank">💬 WhatsApp</a>`);
+    setHTML("github", `<a href="${details.social_links[2]?.url}" target="_blank">🐱 GitHub</a>`);
 
-    // Tambah QR Code jika tersedia
-    if (details.qr_code) {
-        document.getElementById("qr-code").innerHTML = `<img src="${details.qr_code.src}" alt="${details.qr_code.alt}" class="qr-img">`;
-    }
+    // Tambah QR Code
+    setHTML("qr-code", `<img src="${card.qr_code.src}" alt="${card.qr_code.alt}" class="qr-img">`);
 
-    console.log("✅ Semua elemen diperbarui di halaman!");
+    console.log("✅ Semua elemen diperbarui!");
 }
