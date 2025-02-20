@@ -5,7 +5,7 @@ import { renderHTML } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/elemen
 renderHTML("root", "home.html");
 
 // Ambil data dari JSON
-getJSON("pohan.json", null, null, responseFunction);
+getJSON("https://t.if.co.id/json/pohan.json", null, null, responseFunction);
 
 function responseFunction(response) {
     console.log("✅ Data JSON diterima:", response);
