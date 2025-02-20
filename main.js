@@ -53,42 +53,29 @@ function responseFunction(response) {
     // Render teks utama
     setText("profile-name", details.name);
     setText("company-name", details.occupation);
-    setText("job-title", details.about?.[0]?.value ?? "Tidak tersedia");
+    setText("job-title", details.about[0]?.value);
 
     // Render kontak
     console.log("🔍 Memproses kontak...");
-    setHTML("email", `📧 Email: <a href="${details.social_links?.[0]?.url ?? "#"}">${details.social_links?.[0]?.url.replace("mailto:", "") ?? "Tidak tersedia"}</a>`);
-    setHTML("phone", `📞 Telepon: <a href="${details.social_links?.[1]?.url ?? "#"}">${details.social_links?.[1]?.url.replace("https://wa.me/", "") ?? "Tidak tersedia"}</a>`);
-    setText("address", `📍 Alamat: ${details.social_links?.[2]?.url ?? "Tidak tersedia"}`);
-
-    // Render rate (cek apakah `rate_day.price` ada)
-    console.log("🔍 Memproses tarif...");
-    if (details.rate_day && details.rate_day.price) {
-        setText("rate", `💰 Tarif: ${details.rate_day.price}`);
-    } else {
-        console.warn("⚠️ Tarif tidak ditemukan dalam JSON.");
-        setText("rate", "💰 Tarif: Tidak tersedia");
-    }
+    setHTML("email", `📧 Email: <a href="${details.social_links[0]?.url}">${details.social_links[0]?.url.replace("mailto:", "")}</a>`);
+    setHTML("phone", `📞 Telepon: <a href="${details.social_links[1]?.url}">${details.social_links[1]?.url.replace("https://wa.me/", "")}</a>`);
+    setText("address", `📍 Alamat: ${details.social_links[2]?.url}`);
+    setText("rate", `💰 Tarif: ${details.rate_day.price}`);
 
     // Render skills
     console.log("🔍 Memproses daftar keahlian...");
-    setText("skill-title", details.skills?.description ?? "Tidak tersedia");
-    setHTML("skills-list", details.skills?.list?.map(skill => `<div class="skill-item">${skill}</div>`).join("") ?? "Tidak tersedia");
+    setText("skill-title", details.skills.description);
+    setHTML("skills-list", details.skills.list.map(skill => `<div class="skill-item">${skill}</div>`).join(""));
 
     // Render social media
     console.log("🔍 Memproses tautan sosial media...");
-    setHTML("instagram", `<a href="${details.social_links?.[0]?.url ?? "#"}" target="_blank">📷 Instagram</a>`);
-    setHTML("whatsapp", `<a href="${details.social_links?.[1]?.url ?? "#"}" target="_blank">💬 WhatsApp</a>`);
-    setHTML("github", `<a href="${details.social_links?.[2]?.url ?? "#"}" target="_blank">🐱 GitHub</a>`);
+    setHTML("instagram", `<a href="${details.social_links[0]?.url}" target="_blank">📷 Instagram</a>`);
+    setHTML("whatsapp", `<a href="${details.social_links[1]?.url}" target="_blank">💬 WhatsApp</a>`);
+    setHTML("github", `<a href="${details.social_links[2]?.url}" target="_blank">🐱 GitHub</a>`);
 
     // Render QR Code
     console.log("🔍 Memproses QR Code...");
-    if (card.qr_code && card.qr_code.src) {
-        setHTML("qr-code", `<img src="${card.qr_code.src}" alt="${card.qr_code.alt}" class="qr-img">`);
-    } else {
-        console.warn("⚠️ QR Code tidak ditemukan.");
-        setText("qr-code", "Tidak tersedia");
-    }
+    setHTML("qr-code", `<img src="${card.qr_code.src}" alt="${card.qr_code.alt}" class="qr-img">`);
 
     console.log("✅ Semua elemen telah diperbarui!");
 }
