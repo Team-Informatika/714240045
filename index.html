@@ -1,49 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDCB58S094"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDCB58S094"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kartu Digital</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
     <div class="card">
-        <div class= foto>
-        <img src="img.jpg" alt="Image">
+        <div class="foto">
+            <img id="avatar" src="" alt="">
         </div>
         <div class="card-content">
-            <p class="nama">Hasan Zubeir Pohan</h1>
-            <p class="kelas">Mahasiswa D4-TI | ULBI</p>
-            <p class="kata">"Terus belajar, terus berkembang dalam dunia programming."</p>
+            <p class="nama" id="name"></p>
+            <p class="kelas" id="occupation"></p>
+            <p class="kata" id="about"></p>
             <div class="skills">
-                <p class="skil">My Skill</p>
-                <ul>
-                    <li><i class="video"></i> video</li>
-                    <li><i class="analisis"></i>Analisis</li>
-                    <li><i class="kreatif"></i>Kreatif</li>
-                    <li><i class="Adaptif"></i>Adaptif</li>
-                </ul>
+                <p class="skil" id="skill-title"></p>
+                <ul id="skill-list"></ul>
             </div>
             <div class="harga">
-            <p class="jumlah">$5</p>
-            <p class="waktu">one weeks</p>
-                <div class="social-icons" id="so">
-                    <h3 id="tex">jn</h3>
-                    <i class="fa-brands fa-instagram" id="instagram"></i>
-                    <i class="fa-brands fa-whatsapp" id="whatsapp"></i>
-                    <i class="fa-brands fa-github" id="github"></i>
-                  </div>
-                  <div class="qr-code">
-                    <img src="nogi_qrcode.png" alt="QR Code">
-                </div>   
+                <p class="jumlah" id="amount"></p>
+                <p class="waktu" id="duration"></p>
+                <div class="social-icons" id="social-links"></div>
+                <div class="qr-code">
+                    <img id="qr-code" src="" alt="">
+                </div>
+            </div>
         </div>
     </div>
     <div class="loading">
-    <div id="load">Loading....</div>
+        <div id="load">Loading....</div>
     </div>
 </body>
 </html>
