@@ -24,58 +24,40 @@ function responseFunction(response) {
         return;
     }
 
-    console.log("🔍 Memproses data avatar, nama, pekerjaan, dan deskripsi...");
-
-    // Fungsi untuk mengecek apakah elemen ada sebelum mengubahnya
+    // Cek apakah elemen ada sebelum mengubahnya
     const setText = (id, value, defaultText = "Tidak tersedia") => {
         const element = document.getElementById(id);
-        if (element) {
-            element.textContent = value || defaultText;
-            console.log(`✅ ${id} diperbarui:`, value);
-        } else {
-            console.warn(`⚠️ Elemen ${id} tidak ditemukan.`);
-        }
+        if (element) element.textContent = value || defaultText;
     };
 
     const setHTML = (id, value) => {
         const element = document.getElementById(id);
-        if (element) {
-            element.innerHTML = value;
-            console.log(`✅ ${id} diperbarui dengan HTML.`);
-        } else {
-            console.warn(`⚠️ Elemen ${id} tidak ditemukan.`);
-        }
+        if (element) element.innerHTML = value;
     };
 
     // Render avatar
     setHTML("profile-img", `<img src="${avatar.src}" alt="${avatar.alt}" class="profile-picture">`);
 
-    // Render teks utama
+    // Render teks
     setText("profile-name", details.name);
     setText("company-name", details.occupation);
     setText("job-title", details.about[0]?.value);
-
-    // Render kontak
-    console.log("🔍 Memproses kontak...");
-    setHTML("email", `📧 Email: <a href="${details.social_links[0]?.url}">${details.social_links[0]?.url.replace("mailto:", "")}</a>`);
-    setHTML("phone", `📞 Telepon: <a href="${details.social_links[1]?.url}">${details.social_links[1]?.url.replace("https://wa.me/", "")}</a>`);
+    setText("email", `📧 Email: <a href="${details.social_links[0]?.url}">${details.social_links[0]?.url.replace("mailto:", "")}</a>`);
+    setText("phone", `📞 Telepon: <a href="${details.social_links[1]?.url}">${details.social_links[1]?.url.replace("https://wa.me/", "")}</a>`);
     setText("address", `📍 Alamat: ${details.social_links[2]?.url}`);
     setText("rate", `💰 Tarif: ${details.rate_day.price}`);
 
-    // Render skills
-    console.log("🔍 Memproses daftar keahlian...");
+    // Tambah skills
     setText("skill-title", details.skills.description);
     setHTML("skills-list", details.skills.list.map(skill => `<div class="skill-item">${skill}</div>`).join(""));
 
-    // Render social media
-    console.log("🔍 Memproses tautan sosial media...");
+    // Tambah social media
     setHTML("instagram", `<a href="${details.social_links[0]?.url}" target="_blank">📷 Instagram</a>`);
     setHTML("whatsapp", `<a href="${details.social_links[1]?.url}" target="_blank">💬 WhatsApp</a>`);
     setHTML("github", `<a href="${details.social_links[2]?.url}" target="_blank">🐱 GitHub</a>`);
 
-    // Render QR Code
-    console.log("🔍 Memproses QR Code...");
+    // Tambah QR Code
     setHTML("qr-code", `<img src="${card.qr_code.src}" alt="${card.qr_code.alt}" class="qr-img">`);
 
-    console.log("✅ Semua elemen telah diperbarui!");
+    console.log("✅ Semua elemen diperbarui!");
 }
