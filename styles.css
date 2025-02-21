@@ -21,9 +21,9 @@ body {
 }
 
 .card img {
-  width: 100%;
+  width: 50%;
   height: auto;
-  border-radius: 5%;
+  border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
   margin-top: 20px;
@@ -117,20 +117,4 @@ body {
 #github:hover {
   transform: scale(1.2);
   color: #6e5494;
-}
-
-.qr-code {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #000000;
-  border: 2px dashed #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.qr-code img {
-  max-width: 150px;
-  height: auto;
 }
