@@ -31,9 +31,9 @@ function responseFunction(response) {
         const element = document.getElementById(id);
         if (element) {
             element.textContent = value || defaultText;
-            console.log(✅ ${id} diperbarui:, value);
+            console.log(`✅ ${id} diperbarui:`, value);
         } else {
-            console.warn(⚠️ Elemen ${id} tidak ditemukan.);
+            console.warn(`⚠️ Elemen ${id} tidak ditemukan.`);
         }
     };
 
@@ -41,14 +41,14 @@ function responseFunction(response) {
         const element = document.getElementById(id);
         if (element) {
             element.innerHTML = value;
-            console.log(✅ ${id} diperbarui dengan HTML.);
+            console.log(`✅ ${id} diperbarui dengan HTML.`);
         } else {
-            console.warn(⚠️ Elemen ${id} tidak ditemukan.);
+            console.warn(`⚠️ Elemen ${id} tidak ditemukan.`);
         }
     };
 
     // Render avatar
-    setHTML("profile-img", <img src="${avatar.src}" alt="${avatar.alt}" class="profile-picture">);
+    setHTML("profile-img", `<img src="${avatar.src}" alt="${avatar.alt}" class="profile-picture">`);
 
     // Render teks utama
     setText("profile-name", details.name);
@@ -57,25 +57,25 @@ function responseFunction(response) {
 
     // Render kontak
     console.log("🔍 Memproses kontak...");
-    setHTML("email", 📧 Email: <a href="${details.social_links[0]?.url}">${details.social_links[0]?.url.replace("mailto:", "")}</a>);
-    setHTML("phone", 📞 Telepon: <a href="${details.social_links[1]?.url}">${details.social_links[1]?.url.replace("https://wa.me/", "")}</a>);
-    setText("address", 📍 Alamat: ${details.social_links[2]?.url});
-    setText("rate", 💰 Tarif: ${details.rate_day.price});
+    setHTML("email", `📧 Email: <a href="${details.social_links[0]?.url}">${details.social_links[0]?.url.replace("mailto:", "")}</a>`);
+    setHTML("phone", `📞 Telepon: <a href="${details.social_links[1]?.url}">${details.social_links[1]?.url.replace("https://wa.me/", "")}</a>`);
+    setText("address", `📍 Alamat: ${details.social_links[2]?.url}`);
+    setText("rate", `💰 Tarif: ${details.rate_day.price}`);
 
     // Render skills
     console.log("🔍 Memproses daftar keahlian...");
     setText("skill-title", details.skills.description);
-    setHTML("skills-list", details.skills.list.map(skill => <div class="skill-item">${skill}</div>).join(""));
+    setHTML("skills-list", details.skills.list.map(skill => `<div class="skill-item">${skill}</div>`).join(""));
 
     // Render social media
     console.log("🔍 Memproses tautan sosial media...");
-    setHTML("instagram", <a href="${details.social_links[0]?.url}" target="_blank">📷 Instagram</a>);
-    setHTML("whatsapp", <a href="${details.social_links[1]?.url}" target="_blank">💬 WhatsApp</a>);
-    setHTML("github", <a href="${details.social_links[2]?.url}" target="_blank">🐱 GitHub</a>);
+    setHTML("instagram", `<a href="${details.social_links[0]?.url}" target="_blank">📷 Instagram</a>`);
+    setHTML("whatsapp", `<a href="${details.social_links[1]?.url}" target="_blank">💬 WhatsApp</a>`);
+    setHTML("github", `<a href="${details.social_links[2]?.url}" target="_blank">🐱 GitHub</a>`);
 
     // Render QR Code
     console.log("🔍 Memproses QR Code...");
-    setHTML("qr-code", <img src="${card.qr_code.src}" alt="${card.qr_code.alt}" class="qr-img">);
+    setHTML("qr-code", `<img src="${card.qr_code.src}" alt="${card.qr_code.alt}" class="qr-img">`);
 
     console.log("✅ Semua elemen telah diperbarui!");
 }
