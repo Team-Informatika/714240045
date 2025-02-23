@@ -87,3 +87,16 @@ function responseFunction(response) {
 
     console.log("✅ Semua elemen telah diperbarui!");
 }
+
+fetch(`https://api.allorigins.win/get?url=${encodeURIComponent("http://t.if.co.id/json/pohan.json")}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Gagal mengambil data");
+        }
+        return response.json();
+    })
+    .then(data => {
+        const jsonData = JSON.parse(data.contents); // Perlu parsing ulang karena JSON dibungkus dalam "contents"
+        responseFunction(jsonData);
+    })
+    .catch(error => console.error("❌ Error:", error));
